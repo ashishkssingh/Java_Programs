@@ -16,26 +16,26 @@
 // Java program for implementation of Bubble Sort
 class BubbleSort
 {
-    void bubbleSort(int arr[])
+    void bubbleSort(int unsorted_array[])
     {
-        int n = arr.length;
-        for (int i = 0; i < n-1; i++)
-            for (int j = 0; j < n-i-1; j++)
-                if (arr[j] > arr[j+1])
+        int array_size = unsorted_array.length;
+        for (int i = 0; i < array_size-1; i++)
+            for (int j = 0; j < array_size-i-1; j++)
+                if (unsorted_array[j] > unsorted_array[j+1])
                 {
                     // swap arr[j+1] and arr[i]
-                    int temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
+                    int temp = unsorted_array[j];
+                    unsorted_array[j] = unsorted_array[j+1];
+                    unsorted_array[j+1] = temp;
                 }
     }
 
     /* Prints the array */
-    void printArray(int arr[])
+    void printArray(int sorted_array[])
     {
-        int n = arr.length;
-        for (int i=0; i<n; ++i)
-            System.out.print(arr[i] + " ");
+        int array_size = sorted_array.length;
+        for (int i=0; i<array_size; ++i)
+            System.out.print(sorted_array[i] + " ");
         System.out.println();
     }
 
@@ -43,9 +43,9 @@ class BubbleSort
     public static void main(String args[])
     {
         BubbleSort ob = new BubbleSort();
-        int arr[] = {64, 34, 25, 12, 22, 11, 90};
-        ob.bubbleSort(arr);
+        int[] unsorted_array = new int[]{64, 34, 25, 12, 22, 11, 90};
+        ob.bubbleSort(unsorted_array);
         System.out.println("Sorted array");
-        ob.printArray(arr);
+        ob.printArray(unsorted_array);
     }
 }
