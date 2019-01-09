@@ -57,9 +57,16 @@ class SelectionSort
     // Main function to execute the Selection Sort algorithm.
     public static void main(String args[])
     {
+        // Object of the sorting algorithm
         SelectionSort ob = new SelectionSort();
+
+        // Array to be sorted
         int[] unsorted_array = new int[]{64, 34, 25, 12, 22, 11, 90};
+
+        // Calling sorting algorithm function
         ob.selectionSort(unsorted_array);
+
+
         System.out.println("Sorted array");
         ob.printArray(unsorted_array);
     }
