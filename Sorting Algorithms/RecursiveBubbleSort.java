@@ -6,7 +6,7 @@
 #
 # Author            : Ashish Singh
 #
-# Date created      : 2019019
+# Date created      : 20190111
 #
 # Purpose           : Implementing recursive bubble sort algorithm in Java
 #
@@ -18,24 +18,29 @@ class RecursiveBubbleSort
 {
 
     // Function that implements Bubble Sort algorithm
-    void recursiveBubbleSort(int unsorted_array[], int array_size)
+    int recursiveBubbleSort(int unsorted_array[], int array_size)
     {
 
-      if(array_size == 1)
-        return;
+        // Base condition to terminate the recursion
+        if(array_size == 1)
+            return 0;
+            
 
         // Outer loop to select the element to be compared
         for (int i = 0; i < array_size-1; i++)
 
-                // If jth element is greater than (j+1)th element then interchange positions
-                if (unsorted_array[i] > unsorted_array[i+1])
-                {
+            // If jth element is greater than (j+1)th element then interchange positions
+            if (unsorted_array[i] > unsorted_array[i+1])
+            {
                     int temp = unsorted_array[i];
                     unsorted_array[i] = unsorted_array[i+1];
                     unsorted_array[i+1] = temp;
-                }
+            }
 
-        recursiveBubbleSort(unsorted_array,array_size-1);
+        recursiveBubbleSort(unsorted_array, array_size-1);
+
+        return 0;
+
     }
 
     // Function to print the sorted array as a console output
@@ -48,20 +53,16 @@ class RecursiveBubbleSort
     }
 
     // Main function to execute the Bubble Sort algorithm.
-    public static void main(String args[])
+public static void main(String args[])
     {
-
-        // Object of the sorting algorithm
         RecursiveBubbleSort ob = new RecursiveBubbleSort();
 
-        // Array to be sorted
-        int[] unsorted_array = new int[]{ 64, 34, 25, 12, 22, 11, 90 };
+        int[] unsorted_array = new int[]{64, 34, 25, 12, 22, 11, 90};
 
         // Get size of array to execute loop
         int array_size = unsorted_array.length;
 
-        // Calling sorting algorithm function
-        ob.recursiveBubbleSort(unsorted_array,array_size);
+        ob.recursiveBubbleSort(unsorted_array, array_size);
 
         System.out.println("Sorted array");
 
